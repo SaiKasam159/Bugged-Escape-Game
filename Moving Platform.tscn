@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Moving Platform.gd" type="Script" id=1]
+[ext_resource path="res://Tilesheet/mapPack_tilesheet.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 149.871, 33.4351 )
+
+[node name="Moving Platform" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+scale = Vector2( 2.20588, 0.782353 )
+texture = ExtResource( 2 )
+vframes = 9
+hframes = 8
+frame = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+repeat = true
+playback_process_mode = 0
+playback/repeat = true
